@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1b0c1a">
+  <title>For Piony Intan Zahra</title>
+
+  <!-- Font dekoratif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=Caveat:wght@500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="extra.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <!-- HALAMAN KODE RAHASIA -->
+  <main id="intro" class="intro-screen">
+    <div class="intro-frame">
+
+      <div class="corner corner-tl"></div>
+      <div class="corner corner-tr"></div>
+      <div class="corner corner-bl"></div>
+      <div class="corner corner-br"></div>
+
+      <div class="floral-emblem">
+        <svg viewBox="0 0 240 180">
+          <g fill="none" stroke="#c99a87" stroke-width="1.25">
+            <path d="M120 145 C116 115 124 90 120 55 M120 100 C93 91 83 75 78 55 M120 112 C147 99 159 81 164 58"/>
+            <path d="M119 119 C102 105 94 103 82 105 C91 120 103 126 119 119Z"/>
+            <path d="M122 129 C140 112 151 111 164 114 C154 129 139 136 122 129Z"/>
+            <path d="M78 55 C58 51 48 38 54 23 C72 25 82 38 78 55Z"/>
+            <path d="M164 58 C184 50 190 37 183 23 C166 28 157 41 164 58Z"/>
+            <path d="M120 55 C99 43 98 24 120 9 C142 24 141 43 120 55Z"/>
+            <path d="M120 55 C104 44 106 27 120 18 C134 27 136 44 120 55Z"/>
+            <path d="M54 23 Q39 11 30 19 M183 23 Q199 11 210 20"/>
+          </g>
+          <g fill="#a96f6d">
+            <circle cx="120" cy="36" r="3"/>
+            <circle cx="78" cy="55" r="2.5"/>
+            <circle cx="164" cy="58" r="2.5"/>
+          </g>
+        </svg>
+      </div>
+
+      <p class="eyebrow">A LITTLE SURPRISE FOR</p>
+      <h1 class="intro-name">Piony Intan Zahra</h1>
+      <p class="intro-subtitle">hari bahagiamu</p>
+
+      <div class="lock-mark">✧</div>
+
+      <p class="instruction">MASUKKAN KODE RAHASIA</p>
+
+      <div class="code-dots" id="codeDots">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+
+      <input
+        id="secretInput"
+        class="secret-input"
+        type="password"
+        inputmode="numeric"
+        maxlength="6"
+        autocomplete="off"
+        aria-label="Kode rahasia"
+      >
+
+      <p id="codeError" class="code-error"></p>
+      <p class="tiny-note">made with love, just for you</p>
+       <p class="tiny-note"> from Obie Pramudia</p>
+
+
+    </div>
+  </main>
+
+  <!-- HADIAH -->
+  <section id="giftScreen" class="gift-screen hidden">
+
+    <p class="eyebrow">SOMETHING SPECIAL IS WAITING</p>
+    <h2 class="script-heading">For you, Piony</h2>
+
+    <button id="openGift" class="gift-button" aria-label="Buka hadiah">
+      <svg viewBox="0 0 220 190" class="gift-svg">
+        <path d="M35 78h150v92H35z" fill="#7d3949" stroke="#d9b5a2" stroke-width="2"/>
+        <path d="M25 64h170v28H25z" fill="#a65e68" stroke="#e5c9b8" stroke-width="2"/>
+        <path d="M100 64h20v106h-20z" fill="#e4c7ad"/>
+        <path d="M110 64 C69 58 59 34 72 23 C88 12 105 37 110 64Z" fill="none" stroke="#e4c7ad" stroke-width="7"/>
+        <path d="M110 64 C151 58 161 34 148 23 C132 12 115 37 110 64Z" fill="none" stroke="#e4c7ad" stroke-width="7"/>
+      </svg>
+
+      <span class="gift-caption">tap to open</span>
+    </button>
+
+  </section>
+
+  <!-- REVEAL BUNGA -->
+  <section id="flowerReveal" class="flower-reveal hidden">
+
+    <div class="flower-field">
+      <span class="field-flower f1">✿</span>
+      <span class="field-flower f2">✾</span>
+      <span class="field-flower f3">❀</span>
+      <span class="field-flower f4">✿</span>
+      <span class="field-flower f5">✾</span>
+      <span class="field-flower f6">❀</span>
+      <span class="field-flower f7">✿</span>
+      <span class="field-flower f8">✾</span>
+      <span class="field-flower f9">❀</span>
+      <span class="field-flower f10">✿</span>
+    </div>
+
+    <p class="eyebrow">A DAY AS LOVELY AS YOU</p>
+    <h2 class="birthday-title">HAPPY BIRTHDAY ❀</h2>
+    <p class="birthday-to">Piony Intan Zahra</p>
+
+    <button id="continueButton" class="outline-button">
+      continue ↓
+    </button>
+
+  </section>
+
+  <!-- HALAMAN SCROLL -->
+  <div id="story" class="story hidden">
+
+    <!-- KUE ULANG TAHUN -->
+    <section class="cake-section section-shell" id="cake">
+
+      <p class="eyebrow">MAKE A WISH</p>
+      <h2 class="section-script">A little birthday wish</h2>
+
+      <p class="section-intro">
+        Sebelum melanjutkan, jangan lupa buat satu permohonan.
+      </p>
+
+      <div class="cake-wrap">
+<svg class="cake-svg" viewBox="0 0 360 300" role="img" aria-label="Kue ulang tahun dengan tiga lilin">
+<defs>
+<linearGradient id="b1" x1="0" x2="1"><stop offset="0" stop-color="#b8647b"/><stop offset=".5" stop-color="#d98ea0"/><stop offset="1" stop-color="#a45570"/></linearGradient>
+<linearGradient id="b2" x1="0" x2="1"><stop offset="0" stop-color="#ecc9bd"/><stop offset=".5" stop-color="#f8e6da"/><stop offset="1" stop-color="#dcb4a8"/></linearGradient>
+<linearGradient id="pl" x1="0" x2="1"><stop offset="0" stop-color="#b98f84"/><stop offset=".5" stop-color="#ecd2bd"/><stop offset="1" stop-color="#b98f84"/></linearGradient>
+<linearGradient id="fg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff8f35"/><stop offset=".6" stop-color="#ffd27a"/><stop offset="1" stop-color="#fff7d8"/></linearGradient>
+<radialGradient id="gl"><stop offset="0" stop-color="#ffc872" stop-opacity=".55"/><stop offset="1" stop-color="#ffc872" stop-opacity="0"/></radialGradient>
+<pattern id="st" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="10" height="10" fill="#f6e8de"/><rect width="5" height="10" fill="#c77d8e"/></pattern>
+</defs>
+<ellipse cx="180" cy="272" rx="160" ry="16" fill="url(#pl)"/>
+<path d="M50 188Q50 172 70 172H290Q310 172 310 188V256Q310 268 290 268H70Q50 268 50 256Z" fill="url(#b1)"/>
+<path d="M50 172H310V188 a13 13 0 0 1 -26 0 a13 13 0 0 1 -26 0 a13 13 0 0 1 -26 0 a13 13 0 0 1 -26 0 a13 13 0 0 1 -26 0 a13 13 0 0 1 -26 0 a13 13 0 0 1 -26 0 a13 13 0 0 1 -26 0 a13 13 0 0 1 -26 0 a13 13 0 0 1 -26 0Z" fill="#f8e8dd"/>
+<path d="M62 257H298" stroke="#f8e8dd" stroke-width="4" stroke-dasharray="1 14" stroke-linecap="round"/>
+<path d="M85 126Q85 110 105 110H255Q275 110 275 126V172H85Z" fill="url(#b2)"/>
+<path d="M85 110H275V126 a9.5 9.5 0 0 1 -19.0 0 a9.5 9.5 0 0 1 -19.0 0 a9.5 9.5 0 0 1 -19.0 0 a9.5 9.5 0 0 1 -19.0 0 a9.5 9.5 0 0 1 -19.0 0 a9.5 9.5 0 0 1 -19.0 0 a9.5 9.5 0 0 1 -19.0 0 a9.5 9.5 0 0 1 -19.0 0 a9.5 9.5 0 0 1 -19.0 0 a9.5 9.5 0 0 1 -19.0 0Z" fill="#e9a6b6"/>
+<rect x="104" y="126" width="7" height="22" rx="3.5" fill="#e9a6b6"/><rect x="236" y="126" width="7" height="16" rx="3.5" fill="#e9a6b6"/>
+<ellipse cx="180" cy="110" rx="95" ry="8" fill="#f4d3d0"/>
+<g fill="#c0455f"><circle cx="112" cy="106" r="7"/><circle cx="160" cy="108" r="6"/><circle cx="200" cy="108" r="6"/><circle cx="248" cy="106" r="7"/></g>
+<g fill="#fff" opacity=".55"><circle cx="110" cy="104" r="2"/><circle cx="246" cy="104" r="2"/></g>
+<g class="cdl" transform="translate(140 0)" tabindex="0" role="button" aria-label="Padamkan lilin">
+<rect x="-16" y="20" width="32" height="96" fill="transparent"/>
+<rect x="-5" y="70" width="10" height="42" rx="2" fill="url(#st)"/>
+<path d="M0 70V64" stroke="#3a2428" stroke-width="1.6" stroke-linecap="round"/>
+<circle class="glow" cx="0" cy="54" r="22" fill="url(#gl)"/>
+<g transform="translate(0 63)"><g class="fl"><path d="M0-26C9-14 8-3 0 2C-8-3-9-14 0-26Z" fill="url(#fg)"/><ellipse cy="-6" rx="2.4" ry="5.5" fill="#fffbe9" opacity=".9"/></g></g>
+<path class="smoke" d="M0 62c-7-9 7-17 0-27c-5-8 4-14 1-21"/></g>
+<g class="cdl" transform="translate(180 0)" tabindex="0" role="button" aria-label="Padamkan lilin">
+<rect x="-16" y="20" width="32" height="96" fill="transparent"/>
+<rect x="-5" y="70" width="10" height="42" rx="2" fill="url(#st)"/>
+<path d="M0 70V64" stroke="#3a2428" stroke-width="1.6" stroke-linecap="round"/>
+<circle class="glow" cx="0" cy="54" r="22" fill="url(#gl)"/>
+<g transform="translate(0 63)"><g class="fl"><path d="M0-26C9-14 8-3 0 2C-8-3-9-14 0-26Z" fill="url(#fg)"/><ellipse cy="-6" rx="2.4" ry="5.5" fill="#fffbe9" opacity=".9"/></g></g>
+<path class="smoke" d="M0 62c-7-9 7-17 0-27c-5-8 4-14 1-21"/></g>
+<g class="cdl" transform="translate(220 0)" tabindex="0" role="button" aria-label="Padamkan lilin">
+<rect x="-16" y="20" width="32" height="96" fill="transparent"/>
+<rect x="-5" y="70" width="10" height="42" rx="2" fill="url(#st)"/>
+<path d="M0 70V64" stroke="#3a2428" stroke-width="1.6" stroke-linecap="round"/>
+<circle class="glow" cx="0" cy="54" r="22" fill="url(#gl)"/>
+<g transform="translate(0 63)"><g class="fl"><path d="M0-26C9-14 8-3 0 2C-8-3-9-14 0-26Z" fill="url(#fg)"/><ellipse cy="-6" rx="2.4" ry="5.5" fill="#fffbe9" opacity=".9"/></g></g>
+<path class="smoke" d="M0 62c-7-9 7-17 0-27c-5-8 4-14 1-21"/></g>
+</svg></div>
+<p class="tap-hint">ketuk api lilin untuk memadamkannya</p>
+
+      <button id="afterWish" class="text-link">
+        I made a wish →
+      </button>
+
+    </section>
+
+    <!-- DIGITAL BOUQUET -->
+    <section class="bouquet-section section-shell">
+
+      <p class="eyebrow">A FLOWER FOR YOU</p>
+      <h2 class="section-script">Digital Bouquet</h2>
+
+      <p class="section-intro">
+        Bunga kecil untuk seseorang yang istimewa.
+      </p>
+
+      <div class="bouquet-art">
+        <svg viewBox="0 0 420 390">
+
+          <g fill="none" stroke="#6f8a65" stroke-width="4" stroke-linecap="round">
+            <path d="M210 330Q175 230 90 115M210 330Q210 215 205 83M210 330Q245 210 325 112M210 330Q160 255 145 175M210 330Q270 250 280 175"/>
+            <path d="M154 246q-50-45-70-13q30 37 70 13M250 252q45-48 72-20q-22 40-72 20M188 210q-50-45-70-14q28 38 70 14M238 207q38-43 66-20q-18 38-66 20"/>
+          </g>
+
+          <g fill="#b76d7b" stroke="#e4b8b2" stroke-width="2">
+            <g transform="translate(90 105)">
+              <circle r="13"/>
+              <ellipse cy="-18" rx="10" ry="17"/>
+              <ellipse cy="18" rx="10" ry="17"/>
+              <ellipse cx="-18" rx="17" ry="10"/>
+              <ellipse cx="18" rx="17" ry="10"/>
+            </g>
+
+            <g transform="translate(205 75)" fill="#d7a66f">
+              <circle r="12"/>
+              <ellipse cy="-17" rx="10" ry="16"/>
+              <ellipse cy="17" rx="10" ry="16"/>
+              <ellipse cx="-17" rx="16" ry="10"/>
+              <ellipse cx="17" rx="16" ry="10"/>
+            </g>
+
+            <g transform="translate(325 105)" fill="#d8b6a4">
+              <circle r="12"/>
+              <ellipse cy="-17" rx="10" ry="16"/>
+              <ellipse cy="17" rx="10" ry="16"/>
+              <ellipse cx="-17" rx="16" ry="10"/>
+              <ellipse cx="17" rx="16" ry="10"/>
+            </g>
+
+            <g transform="translate(145 165)" fill="#c78b91">
+              <circle r="10"/>
+              <ellipse cy="-14" rx="8" ry="13"/>
+              <ellipse cy="14" rx="8" ry="13"/>
+              <ellipse cx="-14" rx="13" ry="8"/>
+              <ellipse cx="14" rx="13" ry="8"/>
+            </g>
+
+            <g transform="translate(280 165)" fill="#d5a1a0">
+              <circle r="10"/>
+              <ellipse cy="-14" rx="8" ry="13"/>
+              <ellipse cy="14" rx="8" ry="13"/>
+              <ellipse cx="-14" rx="13" ry="8"/>
+              <ellipse cx="14" rx="13" ry="8"/>
+            </g>
+          </g>
+
+          <path d="M135 260Q210 310 285 260L255 350H165Z" fill="#a45e6b" stroke="#e2c2b2" stroke-width="2"/>
+          <path d="M135 260Q210 305 285 260" fill="none" stroke="#e2c2b2" stroke-width="3"/>
+          <path d="M210 300v48m0-30q-30-30-47-5q15 29 47 5m0 0q30-30 47-5q-15 29-47 5" fill="none" stroke="#e2c2b2" stroke-width="4"/>
+
+        </svg>
+      </div>
+
+      <p class="bouquet-note">
+        May your days bloom with endless beauty, love, and happiness
+      </p>
+
+    </section>
+
+    <!-- SURAT -->
+    <section class="letter-section section-shell">
+
+      <p class="eyebrow">A LETTER FOR YOU</p>
+      <h2 class="section-script">A little note</h2>
+
+      <article class="letter-paper">
+
+        <div class="letter-flower">❀</div>
+
+        <p class="letter-dear">Dear Piony,</p>
+
+        <p>
+          Di hari spesialmu ini, semoga setiap hal baik selalu menemukan
+          jalannya menuju kamu. Semoga kamu dikelilingi orang-orang yang
+          tulus, diberi kesehatan, kebahagiaan, dan keberanian untuk meraih
+          semua hal yang kamu impikan ya sayang ❀
+        </p>
+
+        <p>
+          Terima kasih sudah menjadi seseorang yang begitu berharga.
+          Semoga tahun ini membawa banyak cerita indah yang pantas
+          untuk dikenang.
+        </p>
+
+        <p class="letter-sign">
+          I Love You, Always.
+          <span>With love, Obie Pramudia.</span>
+        </p>
+
+      </article>
+    </section>
+
+    <!-- GALERI FOTO -->
+    <section class="memories-section section-shell">
+
+      <p class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</p>
+      <h2 class="section-script">Our Photo Memories</h2>
+
+      <p class="section-intro">
+        Beberapa momen yang ingin selalu disimpan.
+      </p>
+
+      <div class="memory-grid">
+
+        <figure class="memory memory-tall">
+          <img src="assets/images/foto-01.jpg" alt="">
+          <figcaption>my princess ♡ 👑</figcaption>
+        </figure>
+
+        <figure class="memory memory-offset">
+          <img src="assets/images/foto-02.jpg" alt="">
+          <figcaption>my lovee 💕</figcaption>
+        </figure>
+
+        <figure class="memory">
+          <img src="assets/images/foto-03.jpg" alt="">
+          <figcaption>my world 🌎🤍</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="journey-section section-shell">
+
+      <p class="eyebrow">OUR STORY</p>
+      <h2 class="section-script">Jurnal Perjalanan Cinta Kita</h2>
+
+      <p class="section-intro">
+        Bagaimana takdir mempertemukan kita dan bertumbuh bersama
+      </p>
+
+      <div class="timeline">
+
+        <article class="timeline-item">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-card">
+            <div class="tl-head"><span class="tl-ico">✨</span><h3>Titik Awal</h3></div>
+            <h4>Pertemuan yang Tak Pernah Direncanakan</h4>
+            <p>Semesta mempertemukan kita secara tidak sengaja, sampai waktu terasa berjalan lambat dan rasa penasaran mulai tumbuh.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-card">
+            <div class="tl-head"><span class="tl-ico">💗</span><h3>Getar Pertama</h3></div>
+            <h4>Saat Rasa Itu Diam-diam Tumbuh</h4>
+            <p>Aku sadar rasa suka ini melebihi teman biasa. Di tengah kesibukan, hatiku memilih kamu.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-card">
+            <div class="tl-head"><span class="tl-ico">💬</span><h3>Malam-Malam Panjang</h3></div>
+            <h4>Percakapan yang Tak Pernah Terasa Cukup</h4>
+            <p>Obrolan sampai larut malam membuatku selalu menunggu notifikasimu dan jatuh hati.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-card">
+            <div class="tl-head"><span class="tl-ico">💌</span><h3>Keberanian Cinta</h3></div>
+            <h4>Pengakuan yang Mengubah Segalanya</h4>
+            <p>Aku mengumpulkan keberanian dan mengetik pesan pengakuan dengan tangan gemetar.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-card">
+            <div class="tl-head"><span class="tl-ico">🌱</span><h3>Bertumbuh Bersama</h3></div>
+            <h4>Melewati Hari Demi Hari</h4>
+            <p>Perjalanan yang penuh dinamika, salah paham kecil, dan pertengkaran yang selalu selesai dengan cinta serta obrolan panjang.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="timeline-card">
+            <div class="tl-head"><span class="tl-ico">🏡</span><h3>Untuk Selamanya</h3></div>
+            <h4>Rumah yang Kutemukan Dalam Dirimu</h4>
+            <p>Kamu bukan sekadar seseorang yang kebetulan hadir. Kamu tempat pulang ternyaman bagiku.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PLAYLIST -->
+    <section class="playlist-section section-shell">
+
+      <p class="eyebrow">A SONG TO REMEMBER</p>
+      <h2 class="section-script">Our Playlist</h2>
+
+      <p class="section-intro">
+        Satu lagu untuk menemani halaman kecil ini.
+      </p>
+
+      <div class="music-card">
+
+        <div class="album-art">
+          <span>♪</span>
+          <small>FOR PIONY</small>
+        </div>
+
+        <div class="track-info">
+
+          <p class="track-kicker">A LITTLE MUSIC</p>
+          <h3>Sal Priadi - Kita usahakan rumah itu</h3>
+          <p>just for this moment</p>
+
+          <audio id="birthdayAudio" preload="metadata">
+            <source src="assets/music/lagu.mp3" type="audio/mpeg">
+          </audio>
+
+          <div class="audio-controls">
+            <button id="playMusic" class="play-button">▶</button>
+            <span id="audioStatus">Tambahkan lagu.mp3 ke folder music</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WISHING JAR: 7 CATATAN -->
+    <section class="gratitude-section section-shell">
+
+      <p class="eyebrow">A FEW THINGS FROM THE HEART</p>
+      <h2 class="section-script">Reasons I'm Grateful To Know You</h2>
+
+      <p class="section-intro">
+        Kocok botolnya, lalu ambil satu catatan kecil.
+      </p>
+
+      <div class="jar-area">
+
+        <div id="jar" class="jar" role="button" tabindex="0"
+             aria-label="Kocok botol untuk mengambil catatan">
+
+          <div class="jar-lid"></div>
+          <div class="jar-neck"></div>
+
+          <div class="jar-glass">
+            <div class="jar-shine"></div>
+            <div class="jar-paper p-one"></div>
+            <div class="jar-paper p-two"></div>
+            <div class="jar-paper p-three"></div>
+          </div>
+
+          <div class="jar-label">
+            little notes<br>
+            <span>for you</span>
+          </div>
+
+        </div>
+
+        <button id="shakeJar" class="outline-button">
+          shake the jar ✧
+        </button>
+
+        <div id="noteCard" class="note-card" aria-live="polite">
+          <span class="note-number">A LITTLE NOTE</span>
+          <p id="noteText">
+            Ada tujuh alasan kecil di dalam botol ini.
+            Coba kocok untuk membukanya.
+          </p>
+          <span class="note-heart">♡</span>
+        </div>
+
+        <p id="noteCount" class="note-count">7 little notes inside</p>
+
+      </div>
+    </section>
+
+    <!-- PENUTUP -->
+    <footer class="site-footer">
+
+      <div class="footer-flower">✿</div>
+      <p class="footer-script">Happy birthday, Piony</p>
+      <p>May life be gentle and beautiful to you.</p>
+      <small>MADE WITH LOVE · Pramudia</small>
+
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script src="extra.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>

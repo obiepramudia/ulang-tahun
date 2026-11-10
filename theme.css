@@ -1,0 +1,331 @@
+/* theme.css: gaya baru untuk halaman scroll (#story) saja.
+   Halaman kode, hadiah, dan reveal bunga tidak diubah. */
+
+#story {
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Inter", Arial, sans-serif;
+  --script: "Dancing Script", cursive;
+  --pink: #ff8fb8;
+  --soft: rgba(255, 236, 244, .84);
+
+  font-family: var(--sans);
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Latar pindah ke body supaya bunga bisa berada di belakang konten */
+body:has(#story:not(.hidden)) {
+  background:
+    radial-gradient(ellipse at 50% 0%, #3a1230 0, transparent 55%),
+    #260a1c;
+}
+html:has(#story:not(.hidden)) { background: #260a1c; }
+body:has(#story:not(.hidden)) #fx { z-index: 0; }
+
+#story .section-shell { background: transparent; }
+
+/* Judul bagian: putih, Playfair tebal, tanpa efek gradien */
+#story .section-script {
+  font: 700 clamp(30px, 5.4vw, 50px)/1.2 var(--serif);
+  color: #fff;
+  background: none;
+  -webkit-text-fill-color: #fff;
+  animation: none;
+  padding: 0;
+  margin: 6px 0 12px;
+}
+
+/* Label kecil di atas judul */
+#story .eyebrow {
+  font: 500 12px var(--sans);
+  letter-spacing: .3em;
+  color: #f4b6cb;
+}
+#story .eyebrow::before { content: "\2014\00a0"; }
+#story .eyebrow::after { content: "\00a0\2014"; }
+
+#story .section-intro {
+  font: 400 15px/1.8 var(--sans);
+  letter-spacing: 0;
+  color: var(--soft);
+}
+
+/* Teks kecil lain */
+#story .tap-hint,
+#story .note-count,
+#story .track-kicker,
+#story .note-number {
+  font-family: var(--sans);
+  font-weight: 500;
+}
+#story .text-link { font: italic 500 18px var(--serif); color: #ffc2d6; }
+#story .outline-button { font-family: var(--sans); font-weight: 500; border-radius: 999px; }
+
+/* Cuplikan teks bergaya tulisan tangan diganti ke Playfair miring */
+#story #noteText {
+  font: italic 500 clamp(19px, 3.6vw, 23px)/1.55 var(--serif) !important;
+  color: #4d2038 !important;
+}
+#story .memory figcaption {
+  font: italic 500 19px var(--serif) !important;
+  color: #5a2540 !important;
+}
+
+/* Surat */
+#story .letter-dear { font: italic 600 26px var(--serif); }
+#story .letter-paper p:not(.letter-dear):not(.letter-sign) {
+  font: 400 15.5px/1.95 var(--sans);
+}
+#story .letter-sign { font: italic 500 18px var(--serif); }
+#story .letter-sign span {
+  font: 700 34px var(--script);
+  color: #b64e78;
+}
+
+/* Judul pink menyala, hanya di penutup */
+#story .footer-script {
+  font: 700 clamp(38px, 8vw, 58px) var(--script);
+  color: #ffd0e1;
+  text-shadow:
+    0 0 6px rgba(255, 143, 184, .9),
+    0 0 18px rgba(255, 90, 150, .7),
+    0 0 38px rgba(255, 60, 130, .45);
+}
+#story .site-footer { background: #1a0614; }
+#story .site-footer p:not(.footer-script) { font: 400 14px var(--sans); color: var(--soft); }
+#story .site-footer small { font: 500 10px var(--sans); color: #c99ab0; }
+
+/* Kartu musik */
+#story .track-info h3 { font: 600 28px var(--serif); color: #fff; }
+#story .track-info > p:not(.track-kicker) { color: var(--soft); }
+
+/* ========== Timeline ========== */
+#story .timeline { max-width: 940px; margin-top: 56px; }
+#story .timeline::before {
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, .85) 8%, rgba(255, 255, 255, .85) 92%, transparent);
+}
+#story .timeline-item {
+  display: flex !important;
+  gap: 22px !important;
+  margin: 0 0 34px;
+}
+#story .timeline-dot {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  margin-top: 24px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #260a1c;
+  font-size: 0;
+}
+#story .timeline-card {
+  flex: 1;
+  padding: 22px 26px 24px;
+  text-align: left !important;
+  border: 1px solid rgba(255, 190, 215, .12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .035);
+  box-shadow: 0 10px 28px rgba(10, 2, 8, .35);
+}
+.tl-head { display: flex; align-items: center; gap: 12px; }
+.tl-ico {
+  flex: 0 0 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+  font-size: 20px;
+}
+#story .timeline-card h3 { font: 600 clamp(21px, 3.4vw, 25px) var(--serif); color: #fff; margin: 0; }
+#story .timeline-card h4 { font: 600 16px/1.4 var(--sans); color: #fff; margin: 16px 0 8px; }
+#story .timeline-card p:last-child { font: 400 14.5px/1.75 var(--sans); color: var(--soft); margin: 0; }
+
+@media (min-width: 820px) {
+  #story .timeline::before { left: 50%; }
+  #story .timeline-item {
+    display: grid !important;
+    grid-template-columns: 1fr 22px 1fr;
+    gap: 0 44px !important;
+    margin-bottom: 70px;
+  }
+  #story .timeline-dot { grid-column: 2; grid-row: 1; margin-top: 26px; }
+  #story .timeline-item:nth-child(odd) .timeline-card { grid-column: 1; grid-row: 1; }
+  #story .timeline-item:nth-child(even) .timeline-card { grid-column: 3; grid-row: 1; margin-top: 50px; }
+}
+
+/* ========== Bunga jatuh ========== */
+#petals {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========== Tombol musik melayang, selalu terlihat ========== */
+#fmusic {
+  display: grid !important;
+  right: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(145deg, #ff9cc2, #e8648f);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .5), 0 0 0 1px rgba(255, 255, 255, .15) inset;
+}
+
+/* ========== Halaman reveal ulang tahun ========== */
+.flower-reveal {
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Inter", Arial, sans-serif;
+  --script: "Dancing Script", cursive;
+}
+.flower-reveal::before {
+  background: radial-gradient(ellipse 58% 48% at center,
+    rgba(26, 6, 22, .9) 0, rgba(26, 6, 22, .62) 55%, rgba(26, 6, 22, 0) 100%);
+}
+.flower-reveal .eyebrow {
+  font: 500 12px var(--sans);
+  letter-spacing: .34em;
+  color: #ffc2d6;
+}
+.flower-reveal .birthday-title {
+  font: 700 clamp(40px, 7.4vw, 88px)/1.05 var(--serif);
+  letter-spacing: .04em;
+  margin: 14px 0 6px;
+  text-shadow: 0 4px 28px rgba(20, 4, 18, .9) !important;
+}
+.flower-reveal .birthday-to {
+  font: 700 clamp(38px, 6vw, 66px) var(--script);
+  color: #ffd0e1 !important;
+  margin: 0 0 40px;
+  text-shadow:
+    0 0 8px rgba(255, 143, 184, .9),
+    0 0 24px rgba(255, 80, 150, .7),
+    0 0 48px rgba(255, 60, 130, .45) !important;
+}
+.flower-reveal .outline-button {
+  font: 500 12px var(--sans);
+  border-radius: 999px;
+  padding: 14px 32px;
+  border-color: #ff9cc2;
+  background: rgba(255, 143, 184, .14);
+  backdrop-filter: blur(4px);
+}
+.flower-reveal .outline-button:hover { background: #e8648f; border-color: #e8648f; }
+
+/* ========== Cover: halaman kode rahasia ========== */
+#intro {
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Inter", Arial, sans-serif;
+  --script: "Dancing Script", cursive;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 90, 150, .14), transparent 42%),
+    radial-gradient(circle at 82% 78%, rgba(255, 120, 170, .12), transparent 42%),
+    radial-gradient(ellipse at 50% 42%, #43213a 0, #250f24 48%, #140813 100%);
+}
+.cover-fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+#intro .intro-frame {
+  z-index: 1;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 170, 205, .34);
+  outline: 1px solid rgba(255, 170, 205, .12);
+  outline-offset: 9px;
+  background: rgba(28, 7, 24, .6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 90px rgba(255, 90, 150, .14), inset 0 0 70px rgba(255, 120, 170, .05);
+}
+#intro .corner { display: none; }
+
+/* Emblem bunga */
+#intro .floral-emblem svg {
+  filter: drop-shadow(0 0 10px rgba(255, 120, 170, .55));
+  animation: bob 5.5s ease-in-out infinite;
+}
+#intro .floral-emblem g[stroke] { stroke: #ffb3cf; }
+#intro .floral-emblem g[fill] { fill: #ff8fb8; }
+@keyframes bob { 50% { transform: translateY(-6px); } }
+
+/* Teks */
+#intro .eyebrow {
+  font: 500 12px var(--sans);
+  letter-spacing: .34em;
+  color: #ffc2d6;
+  margin: 4px 0 2px;
+}
+#intro .intro-name {
+  font: 700 clamp(42px, 9vw, 66px)/1.15 var(--script);
+  background: none;
+  animation: none;
+  padding: 0;
+  color: #ffd6e5;
+  -webkit-text-fill-color: #ffd6e5;
+  text-shadow:
+    0 0 8px rgba(255, 143, 184, .85),
+    0 0 24px rgba(255, 80, 150, .65),
+    0 0 48px rgba(255, 60, 130, .4);
+}
+#intro .intro-subtitle {
+  font: italic 500 21px var(--serif);
+  letter-spacing: .06em;
+  color: #ffb9d0;
+}
+#intro .lock-mark { color: #ffd3e1; text-shadow: 0 0 14px rgba(255, 143, 184, .8); }
+#intro .instruction {
+  font: 500 11px var(--sans);
+  letter-spacing: .26em;
+  color: #f4c8d8;
+}
+#intro .code-dots { gap: 15px; }
+#intro .code-dots span {
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid #ff9cc2;
+}
+#intro .code-dots span.filled {
+  background: #ff8fb8;
+  box-shadow: 0 0 12px #ff8fb8, 0 0 24px rgba(255, 90, 150, .6);
+}
+#intro .code-error { font: 400 13px var(--sans); color: #ffb3b8; }
+#intro .tiny-note { font: italic 400 14px var(--serif); letter-spacing: .02em; color: #d2a5b8; }
+
+/* Satu momen masuk saat halaman dibuka */
+#intro .intro-frame > :not(.code-dots):not(.secret-input):not(.corner):not(.code-error) {
+  animation: coverIn 1s cubic-bezier(.2, .7, .2, 1) both;
+}
+#intro .floral-emblem { animation-delay: .1s !important; }
+#intro .eyebrow { animation-delay: .35s !important; }
+#intro .intro-name { animation-delay: .5s !important; }
+#intro .intro-subtitle { animation-delay: .65s !important; }
+#intro .lock-mark { animation-delay: .8s !important; }
+#intro .instruction { animation-delay: .95s !important; }
+#intro .tiny-note { animation-delay: 1.15s !important; }
+@keyframes coverIn { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } }
+
+/* ========== Halaman hadiah ========== */
+.gift-screen {
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Inter", Arial, sans-serif;
+  --script: "Dancing Script", cursive;
+}
+.gift-screen .eyebrow { font: 500 12px var(--sans); letter-spacing: .3em; color: #ffc2d6; }
+.gift-screen .script-heading {
+  font: 700 clamp(44px, 8vw, 70px) var(--script);
+  background: none;
+  animation: none;
+  padding: 0;
+  color: #ffd6e5;
+  -webkit-text-fill-color: #ffd6e5;
+  text-shadow: 0 0 8px rgba(255, 143, 184, .85), 0 0 24px rgba(255, 80, 150, .65), 0 0 48px rgba(255, 60, 130, .4);
+}
+.gift-screen .gift-caption { font: 500 12px var(--sans); letter-spacing: .24em; color: #ffc2d6; }

@@ -1,0 +1,145 @@
+/* extra.css: lapisan tambahan di atas style.css */
+
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:15}
+
+/* Judul script berkilau pelan */
+.section-script,.intro-name,.script-heading{
+  background:linear-gradient(100deg,#d9b09c 20%,#fff1e4 45%,#d9b09c 70%);
+  background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  padding:.05em .12em .18em;
+  animation:shine 7s linear infinite;
+}
+@keyframes shine{to{background-position:-250% 0}}
+
+/* Progress scroll */
+#bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:30;
+  background:linear-gradient(90deg,#b97880,#fff4f8);box-shadow:0 0 10px #b97880}
+
+/* Kode salah */
+.shake{animation:shk .45s}
+@keyframes shk{20%,60%{translate:-8px 0}40%,80%{translate:8px 0}}
+.code-dots.shake span{border-color:#e3a2a2}
+
+/* Judul ulang tahun muncul huruf per huruf */
+.birthday-title .w{display:inline-block;white-space:nowrap}
+.birthday-title .l{display:inline-block;animation:pop .8s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes pop{from{opacity:0;transform:translateY(36px) scale(.3) rotate(-14deg)}}
+
+/* Reveal dipakai hanya untuk beberapa elemen kunci */
+.rv{opacity:0;translate:0 34px;transition:opacity .9s ease,translate .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;translate:0 0}
+
+/* Ucapan setelah semua lilin padam */
+.wish-done{min-height:36px;margin:16px 0 0;font:italic 25px var(--serif);
+  color:#ffe9f0;opacity:0;transition:opacity 1.2s}
+.wish-done.on{opacity:1}
+
+/* Foto */
+.memory{position:relative;cursor:zoom-in}
+.memory.in{transition:opacity .9s,translate .35s,box-shadow .35s}
+.memory.in:hover{translate:0 -7px;box-shadow:0 18px 34px rgba(8,2,5,.55)}
+.memory.ph{background:linear-gradient(145deg,#43213a,#240f23);min-height:210px;
+  display:grid;place-items:center;cursor:default}
+.memory.ph img{opacity:0}
+.memory.ph::before{content:"\273F";position:absolute;top:38%;font-size:44px;color:#e79ab5;opacity:.6}
+
+#lb{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;gap:14px;
+  align-items:center;justify-content:center;background:rgba(20,6,12,.94);
+  opacity:0;pointer-events:none;transition:opacity .35s;cursor:zoom-out}
+#lb.on{opacity:1;pointer-events:auto}
+#lb img{max-width:92vw;max-height:78vh;padding:8px;background:#2d1329;
+  border:1px solid #e79ab5;transform:scale(.92);transition:transform .4s}
+#lb.on img{transform:none}
+#lb p{margin:0;font:italic 22px var(--serif);color:#f3c9d8}
+
+/* Musik */
+.album-art.playing span{display:inline-block;animation:beat 1s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.3) rotate(8deg)}}
+.music-card.playing{box-shadow:0 0 40px rgba(185,120,128,.35)}
+
+/* Jejak kilau kursor */
+.sp{position:fixed;pointer-events:none;z-index:50;color:#e8c8b6;font-size:13px;
+  animation:sp .9s forwards}
+@keyframes sp{to{opacity:0;transform:translateY(26px) scale(.2) rotate(120deg)}}
+
+:focus-visible{outline:2px solid #ffd9e6;outline-offset:4px}
+
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;translate:none;transition:none}
+  *{animation:none!important}
+  #fx,.sp{display:none}
+}
+
+/* ===== Kue ===== */
+.cake-wrap{display:block!important;width:min(86vw,380px);height:auto!important;margin:34px auto 0}
+.cake-svg{width:100%;height:auto;display:block;overflow:visible;filter:drop-shadow(0 26px 22px rgba(0,0,0,.45))}
+.cdl{cursor:pointer;outline:none}
+.cdl:focus-visible rect:first-child{stroke:#ffd9e6;stroke-dasharray:3 4}
+.fl{transform-box:fill-box;transform-origin:50% 100%;animation:flick 1.7s ease-in-out infinite;transition:opacity .35s,scale .5s}
+.cdl:nth-of-type(2) .fl{animation-delay:-.6s}.cdl:nth-of-type(3) .fl{animation-delay:-1.1s}
+@keyframes flick{0%,100%{transform:scale(1,1) rotate(-1.5deg)}25%{transform:scale(.93,1.08) rotate(1.8deg)}50%{transform:scale(1.04,.95) rotate(-1deg)}75%{transform:scale(.97,1.05) rotate(1deg)}}
+.glow{animation:glw 2.2s ease-in-out infinite;transition:opacity .4s}
+@keyframes glw{50%{opacity:.7}}
+.cdl.off .fl{animation:none;opacity:0;scale:.1}
+.cdl.off .glow{animation:none;opacity:0}
+.smoke{fill:none;stroke:#eadfd9;stroke-width:3;stroke-linecap:round;opacity:0}
+.cdl.off .smoke{animation:smk 2.8s ease-out forwards}
+@keyframes smk{0%{opacity:.75;translate:0 0}100%{opacity:0;translate:7px -52px}}
+
+/* ===== Botol ===== */
+.jar-glass{position:relative;overflow:visible!important}
+.jp{position:absolute;width:30px;height:20px;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.35);z-index:1}
+.jp.out{animation:jout 1s cubic-bezier(.3,.7,.3,1) forwards;z-index:5}
+@keyframes jout{40%{translate:0 -95px;scale:1.5;opacity:1}100%{translate:10px -150px;scale:1.9;opacity:0}}
+#jar.shaking{animation:jshake .9s ease-out!important}
+@keyframes jshake{0%,100%{rotate:0deg}12%{rotate:-10deg;translate:-4px 0}26%{rotate:9deg;translate:4px 0}40%{rotate:-6deg}55%{rotate:4deg}70%{rotate:-2deg}}
+.note-card{position:relative;background-image:repeating-linear-gradient(transparent 0 35px,rgba(150,90,110,.15) 35px 36px)}
+.note-card::before{content:"";position:absolute;top:-13px;left:50%;width:92px;height:26px;translate:-50% 0;rotate:-3deg;background:rgba(236,205,165,.7)}
+.note-card.pop{animation:unfold .8s cubic-bezier(.2,.9,.3,1.15)}
+@keyframes unfold{from{opacity:0;translate:0 -60px;scale:.82}}
+#noteText{font:600 clamp(25px,4.2vw,31px)/1.35 'Caveat',cursive!important;color:#5a2e43!important}
+
+/* ===== Foto: 3 polaroid ===== */
+.memory-grid{display:flex!important;flex-wrap:wrap;justify-content:center;gap:38px 30px;max-width:960px;margin:0 auto}
+.memory{width:min(270px,82vw)!important;height:auto!important;min-height:0!important;margin:0!important;padding:12px 12px 14px!important;background:#f6ebe0!important;border:0!important;aspect-ratio:auto!important;box-shadow:0 14px 28px rgba(8,2,12,.5)}
+.memory img{width:100%;height:300px!important;object-fit:cover;display:block;padding:0!important}
+.memory figcaption{position:static!important;background:none!important;color:#5a2e43!important;font:600 26px 'Caveat',cursive!important;letter-spacing:0!important;margin-top:10px;text-transform:none!important}
+.memory:nth-child(1){rotate:-3deg}.memory:nth-child(2){rotate:2deg;margin-top:26px!important}.memory:nth-child(3){rotate:-1.5deg}
+.memory::after{content:"";position:absolute;top:-11px;left:50%;width:80px;height:22px;translate:-50% 0;rotate:3deg;background:rgba(236,205,165,.7)}
+.memory.ph{display:block;min-height:0}
+.memory.ph img{opacity:1;background:linear-gradient(145deg,#6a3a5c,#34172f);color:transparent}
+.memory.ph::before{top:130px;left:50%;translate:-50% 0;z-index:1}
+
+/* ===== Hamparan bunga ===== */
+.flower-field{display:none!important}
+.bloom{position:absolute;inset:0;width:100%;height:100%}
+.flower-reveal::before{content:"";position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse at center,rgba(22,6,20,.84) 0,rgba(22,6,20,.55) 42%,rgba(22,6,20,.08) 100%)}
+.flower-reveal .eyebrow,.flower-reveal .birthday-title,.flower-reveal .birthday-to,.flower-reveal .outline-button{position:relative;z-index:2}
+.birthday-title{color:#fff!important;text-shadow:0 4px 24px rgba(20,4,18,.8)}
+.birthday-to{color:#ffc2d6!important;text-shadow:0 2px 16px rgba(20,4,18,.8)}
+
+/* ===== Warna teks: putih lembut dan pink ===== */
+.section-script,.intro-name,.script-heading{background-image:linear-gradient(100deg,#ffe3ec 20%,#fff 45%,#ffc2d6 70%)}
+.eyebrow{color:#ff9fbd}
+.note-card .eyebrow,.note-number{color:#a14e6c!important}
+
+/* ===== Timeline bergantian kiri dan kanan ===== */
+@media (min-width:820px){
+  .timeline{max-width:920px}
+  .timeline:before{left:50%}
+  .timeline-item{display:grid!important;grid-template-columns:1fr 55px 1fr;gap:0 24px!important}
+  .timeline-dot{grid-column:2;grid-row:1}
+  .timeline-item:nth-child(odd) .timeline-card{grid-column:1;grid-row:1;text-align:right}
+  .timeline-item:nth-child(even) .timeline-card{grid-column:3;grid-row:1}
+}
+
+/* ===== Musik ===== */
+.prog{display:flex;align-items:center;gap:10px;margin-top:14px;font:11px var(--sans);color:#f0b8cb}
+.prog input{flex:1;accent-color:#ff9fbd}
+#fmusic{display:none;position:fixed;right:18px;bottom:18px;width:48px;height:48px;border:0;border-radius:50%;
+  place-items:center;font-size:21px;color:#fff;background:#e9709a;z-index:35;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+#story:not(.hidden) ~ #fmusic{display:grid}
+#fmusic.on{animation:beat 1s ease-in-out infinite;box-shadow:0 0 22px rgba(255,130,170,.7)}
