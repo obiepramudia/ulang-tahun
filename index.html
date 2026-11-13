@@ -188,7 +188,7 @@
 
     </section>
 
-   <!-- DIGITAL BOUQUET -->
+  <!-- DIGITAL BOUQUET -->
 <section class="bouquet-section section-shell">
 
   <p class="eyebrow">A FLOWER FOR YOU</p>
@@ -199,7 +199,7 @@
   </p>
 
   <div class="bouquet-art">
-    <svg class="bouquet" viewBox="0 0 400 430" role="img" aria-label="Buket bunga dalam pot">
+    <svg class="bouquet" viewBox="0 0 400 430" role="img" aria-label="Buket bunga dengan pita">
       <defs>
         <g id="fl4">
           <ellipse cy="-18" rx="12" ry="20"/>
@@ -219,24 +219,28 @@
         <path id="leaf" d="M0 0 C20 -20 52 -20 68 0 C52 20 20 20 0 0Z"/>
       </defs>
 
+      <!-- kertas belakang -->
+      <path d="M92 262 L204 414 L316 262 Q204 306 92 262Z"
+            fill="#8f4f5e" stroke="#f0cfc0" stroke-width="3" stroke-linejoin="round"/>
+
       <g class="sway">
         <!-- tangkai -->
         <g fill="none" stroke="#7d9a6e" stroke-width="4" stroke-linecap="round">
-          <path d="M200 335 C200 250 200 170 200 118"/>
-          <path d="M200 335 C185 270 135 205 112 165"/>
-          <path d="M200 335 C215 270 265 210 288 168"/>
-          <path d="M200 335 C170 295 100 265 68 236"/>
-          <path d="M200 335 C230 295 300 265 333 232"/>
-          <path d="M200 335 C190 290 165 240 150 200"/>
-          <path d="M200 335 C212 290 238 235 252 196"/>
+          <path d="M205 330 C205 250 205 170 200 118"/>
+          <path d="M205 330 C190 270 135 205 112 165"/>
+          <path d="M205 330 C220 270 265 210 288 168"/>
+          <path d="M205 330 C175 295 100 265 68 236"/>
+          <path d="M205 330 C235 295 300 265 333 232"/>
+          <path d="M205 330 C195 290 165 240 150 200"/>
+          <path d="M205 330 C217 290 238 235 252 196"/>
         </g>
 
         <!-- daun -->
         <g fill="#7d9a6e" stroke="#9db98e" stroke-width="1.5">
-          <use href="#leaf" transform="translate(196 300) rotate(-145)"/>
-          <use href="#leaf" transform="translate(204 300) rotate(-35)"/>
-          <use href="#leaf" transform="translate(194 325) rotate(-168) scale(.8)"/>
-          <use href="#leaf" transform="translate(206 325) rotate(-12) scale(.8)"/>
+          <use href="#leaf" transform="translate(190 292) rotate(-150)"/>
+          <use href="#leaf" transform="translate(220 292) rotate(-30)"/>
+          <use href="#leaf" transform="translate(185 305) rotate(-175) scale(.75)"/>
+          <use href="#leaf" transform="translate(225 305) rotate(-5) scale(.75)"/>
         </g>
 
         <!-- bunga -->
@@ -251,11 +255,18 @@
         </g>
       </g>
 
-      <!-- pot -->
-      <path d="M122 335 H278 L254 412 H146 Z" fill="#a45f6d" stroke="#f0cfc0" stroke-width="3" stroke-linejoin="round"/>
-      <rect x="112" y="324" width="176" height="18" rx="7" fill="#b86f7d" stroke="#f0cfc0" stroke-width="3"/>
-      <path d="M200 375 C182 354 160 366 172 380 C180 390 196 384 200 375 C204 384 220 390 228 380 C240 366 218 354 200 375Z"
-            fill="none" stroke="#f0cfc0" stroke-width="3" stroke-linejoin="round"/>
+      <!-- kertas depan -->
+      <path d="M118 290 Q208 334 300 264 L210 414 Z"
+            fill="#d4a0a6" stroke="#f0cfc0" stroke-width="3" stroke-linejoin="round"/>
+
+      <!-- pita -->
+      <g fill="#f0cfc0" stroke="#c9707f" stroke-width="2.5" stroke-linejoin="round">
+        <path d="M205 352 C175 325 148 346 171 364 C185 372 200 360 205 352Z"/>
+        <path d="M205 352 C235 325 262 346 239 364 C225 372 210 360 205 352Z"/>
+        <path d="M202 358 L180 398 L198 392 L206 360Z"/>
+        <path d="M208 358 L230 398 L212 392 L204 360Z"/>
+        <circle cx="205" cy="355" r="8"/>
+      </g>
     </svg>
   </div>
 
