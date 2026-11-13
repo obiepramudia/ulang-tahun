@@ -188,79 +188,83 @@
 
     </section>
 
-    <!-- DIGITAL BOUQUET -->
-    <section class="bouquet-section section-shell">
+   <!-- DIGITAL BOUQUET -->
+<section class="bouquet-section section-shell">
 
-      <p class="eyebrow">A FLOWER FOR YOU</p>
-      <h2 class="section-script">Digital Bouquet</h2>
+  <p class="eyebrow">A FLOWER FOR YOU</p>
+  <h2 class="section-script">Digital Bouquet</h2>
 
-      <p class="section-intro">
-        Bunga kecil untuk seseorang yang istimewa.
-      </p>
+  <p class="section-intro">
+    Bunga kecil untuk seseorang yang istimewa.
+  </p>
 
-      <div class="bouquet-art">
-        <svg viewBox="0 0 420 390">
+  <div class="bouquet-art">
+    <svg class="bouquet" viewBox="0 0 400 430" role="img" aria-label="Buket bunga dalam pot">
+      <defs>
+        <g id="fl4">
+          <ellipse cy="-18" rx="12" ry="20"/>
+          <ellipse cy="-18" rx="12" ry="20" transform="rotate(90)"/>
+          <ellipse cy="-18" rx="12" ry="20" transform="rotate(180)"/>
+          <ellipse cy="-18" rx="12" ry="20" transform="rotate(270)"/>
+          <circle r="6" fill="#f6dccb" stroke="none"/>
+        </g>
+        <g id="fl5">
+          <ellipse cy="-16" rx="11" ry="18"/>
+          <ellipse cy="-16" rx="11" ry="18" transform="rotate(72)"/>
+          <ellipse cy="-16" rx="11" ry="18" transform="rotate(144)"/>
+          <ellipse cy="-16" rx="11" ry="18" transform="rotate(216)"/>
+          <ellipse cy="-16" rx="11" ry="18" transform="rotate(288)"/>
+          <circle r="6" fill="#f6dccb" stroke="none"/>
+        </g>
+        <path id="leaf" d="M0 0 C20 -20 52 -20 68 0 C52 20 20 20 0 0Z"/>
+      </defs>
 
-          <g fill="none" stroke="#6f8a65" stroke-width="4" stroke-linecap="round">
-            <path d="M210 330Q175 230 90 115M210 330Q210 215 205 83M210 330Q245 210 325 112M210 330Q160 255 145 175M210 330Q270 250 280 175"/>
-            <path d="M154 246q-50-45-70-13q30 37 70 13M250 252q45-48 72-20q-22 40-72 20M188 210q-50-45-70-14q28 38 70 14M238 207q38-43 66-20q-18 38-66 20"/>
-          </g>
+      <g class="sway">
+        <!-- tangkai -->
+        <g fill="none" stroke="#7d9a6e" stroke-width="4" stroke-linecap="round">
+          <path d="M200 335 C200 250 200 170 200 118"/>
+          <path d="M200 335 C185 270 135 205 112 165"/>
+          <path d="M200 335 C215 270 265 210 288 168"/>
+          <path d="M200 335 C170 295 100 265 68 236"/>
+          <path d="M200 335 C230 295 300 265 333 232"/>
+          <path d="M200 335 C190 290 165 240 150 200"/>
+          <path d="M200 335 C212 290 238 235 252 196"/>
+        </g>
 
-          <g fill="#b76d7b" stroke="#e4b8b2" stroke-width="2">
-            <g transform="translate(90 105)">
-              <circle r="13"/>
-              <ellipse cy="-18" rx="10" ry="17"/>
-              <ellipse cy="18" rx="10" ry="17"/>
-              <ellipse cx="-18" rx="17" ry="10"/>
-              <ellipse cx="18" rx="17" ry="10"/>
-            </g>
+        <!-- daun -->
+        <g fill="#7d9a6e" stroke="#9db98e" stroke-width="1.5">
+          <use href="#leaf" transform="translate(196 300) rotate(-145)"/>
+          <use href="#leaf" transform="translate(204 300) rotate(-35)"/>
+          <use href="#leaf" transform="translate(194 325) rotate(-168) scale(.8)"/>
+          <use href="#leaf" transform="translate(206 325) rotate(-12) scale(.8)"/>
+        </g>
 
-            <g transform="translate(205 75)" fill="#d7a66f">
-              <circle r="12"/>
-              <ellipse cy="-17" rx="10" ry="16"/>
-              <ellipse cy="17" rx="10" ry="16"/>
-              <ellipse cx="-17" rx="16" ry="10"/>
-              <ellipse cx="17" rx="16" ry="10"/>
-            </g>
+        <!-- bunga -->
+        <g stroke="#f0cfc0" stroke-width="2">
+          <use href="#fl4" fill="#e0a95f" transform="translate(200 100) scale(1.1)"/>
+          <use href="#fl5" fill="#c9707f" transform="translate(112 152) rotate(10)"/>
+          <use href="#fl4" fill="#e8c4b0" transform="translate(288 155) scale(1.05) rotate(15)"/>
+          <use href="#fl5" fill="#d99aa3" transform="translate(68 226) scale(.85)"/>
+          <use href="#fl4" fill="#d99aa3" transform="translate(333 222) scale(.8) rotate(20)"/>
+          <use href="#fl5" fill="#5b6fd6" transform="translate(150 190) scale(.5)"/>
+          <use href="#fl5" fill="#e0a95f" transform="translate(252 186) scale(.5) rotate(20)"/>
+        </g>
+      </g>
 
-            <g transform="translate(325 105)" fill="#d8b6a4">
-              <circle r="12"/>
-              <ellipse cy="-17" rx="10" ry="16"/>
-              <ellipse cy="17" rx="10" ry="16"/>
-              <ellipse cx="-17" rx="16" ry="10"/>
-              <ellipse cx="17" rx="16" ry="10"/>
-            </g>
+      <!-- pot -->
+      <path d="M122 335 H278 L254 412 H146 Z" fill="#a45f6d" stroke="#f0cfc0" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="112" y="324" width="176" height="18" rx="7" fill="#b86f7d" stroke="#f0cfc0" stroke-width="3"/>
+      <path d="M200 375 C182 354 160 366 172 380 C180 390 196 384 200 375 C204 384 220 390 228 380 C240 366 218 354 200 375Z"
+            fill="none" stroke="#f0cfc0" stroke-width="3" stroke-linejoin="round"/>
+    </svg>
+  </div>
 
-            <g transform="translate(145 165)" fill="#c78b91">
-              <circle r="10"/>
-              <ellipse cy="-14" rx="8" ry="13"/>
-              <ellipse cy="14" rx="8" ry="13"/>
-              <ellipse cx="-14" rx="13" ry="8"/>
-              <ellipse cx="14" rx="13" ry="8"/>
-            </g>
+  <p class="bouquet-note">
+    May your days bloom with endless beauty, love, and happiness
+  </p>
 
-            <g transform="translate(280 165)" fill="#d5a1a0">
-              <circle r="10"/>
-              <ellipse cy="-14" rx="8" ry="13"/>
-              <ellipse cy="14" rx="8" ry="13"/>
-              <ellipse cx="-14" rx="13" ry="8"/>
-              <ellipse cx="14" rx="13" ry="8"/>
-            </g>
-          </g>
-
-          <path d="M135 260Q210 310 285 260L255 350H165Z" fill="#a45e6b" stroke="#e2c2b2" stroke-width="2"/>
-          <path d="M135 260Q210 305 285 260" fill="none" stroke="#e2c2b2" stroke-width="3"/>
-          <path d="M210 300v48m0-30q-30-30-47-5q15 29 47 5m0 0q30-30 47-5q-15 29-47 5" fill="none" stroke="#e2c2b2" stroke-width="4"/>
-
-        </svg>
-      </div>
-
-      <p class="bouquet-note">
-        May your days bloom with endless beauty, love, and happiness
-      </p>
-
-    </section>
-
+</section>
+    
     <!-- SURAT -->
     <section class="letter-section section-shell">
 
